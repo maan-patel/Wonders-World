@@ -25,7 +25,7 @@ const MongoStore = require('connect-mongo')(session);
 
 const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/yelp-camp';
 
-mongoose.connect('mongodb://localhost:27017/yelp-camp', {
+mongoose.connect(dbUrl, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
@@ -54,7 +54,7 @@ app.use(mongoSanitize({
 const secret = process.env.SECRET || 'thisshouldbeabettersecret!'
 
 const store = new MongoStore({
-    url: 'mongodb://localhost:27017/yelp-camp',
+    url: dbUrl,
     secret: secret,
     touchAfter: 24 * 60 * 60
 })

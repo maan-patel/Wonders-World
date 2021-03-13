@@ -126,6 +126,7 @@ app.use(
                 "http://upload.wikimedia.org",
                 "https://wallpapercave.com/",
                 "https://cdn.britannica.com/",
+                "https://unsplash.com/collections/",
                 "https://www.wallpapertip.com/wmimgs/"
             ],
             fontSrc: ["'self'", ...fontSrcUrls],

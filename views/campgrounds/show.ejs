@@ -42,7 +42,7 @@
         <li class="list-group-item">
           Submitted by <%= campground.author.username%>
         </li>
-        <li class="list-group-item">$<%= campground.price%>/night</li>
+        <li class="list-group-item">Established In: <%= campground.price%></li>
       </ul>
       <% if( currentUser && campground.author.equals(currentUser._id)) {%>
       <div class="card-body">
@@ -60,7 +60,7 @@
         </form>
       </div>
       <% } %>
-      <div class="card-footer text-muted">2 days ago</div>
+      <div class="card-footer text-muted">256 days ago</div>
     </div>
   </div>
   <div class="col-6">

@@ -21,7 +21,7 @@ db.once("open", () => {
 // const seedDB = async () => {
 //     await Campground.deleteMany({});
 //     for (let i = 0; i < 50; i++) {
-//         const price = Math.floor(Math.random() * 20) + 10;
+//         const price = wonders[i].year
 //         const camp = new Campground({
 //             //YOUR USER ID
 //             author: '603857fce5b64309fc07fa1e',

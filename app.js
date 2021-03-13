@@ -123,7 +123,9 @@ app.use(
                 "https://res.cloudinary.com/dy4ygmndt/", //SHOULD MATCH YOUR CLOUDINARY ACCOUNT! 
                 "https://images.unsplash.com/",
                 "https://source.unsplash.com/collection/",
+                "http://upload.wikimedia.org",
                 "https://wallpapercave.com/",
+                "https://cdn.britannica.com/",
                 "https://www.wallpapertip.com/wmimgs/"
             ],
             fontSrc: ["'self'", ...fontSrcUrls],

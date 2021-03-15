@@ -1,6 +1,14 @@
 <% layout('layouts/boilerplate')%>
 <div id="cluster-map"></div>
 <div class="container">
+  <!-- <p>
+    <form action="/wonders" method = "GET" class="form-inline">
+      <div class="form-group">
+        <input type="text" name="search" id="" placeholder="Search for a wonder..." class="form-control">
+        <input type="submit" value="Search" class="btn btn-primary">
+      </div>
+    </form>
+  </p> -->
   <h1>All Wonders</h1>
 
   <% for (let campground of campgrounds){%>
@@ -25,7 +33,7 @@
           <p class="card-text">
             <small class="text-muted"><%= campground.location%></small>
           </p>
-          <a class="btn btn-primary" href="/campgrounds/<%=campground._id%>"
+          <a class="btn btn-primary" href="/wonders/<%=campground._id%>"
             >View <%=campground.title%></a
           >
         </div>

@@ -151,8 +151,8 @@ app.use((req, res, next) => {
 
 
 app.use('/', userRoutes);
-app.use('/campgrounds', campgroundRoutes)
-app.use('/campgrounds/:id/reviews', reviewRoutes)
+app.use('/wonders', campgroundRoutes)
+app.use('/wonders/:id/reviews', reviewRoutes)
 
 
 app.get('/', (req, res) => {

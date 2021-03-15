@@ -12,7 +12,7 @@ module.exports.register = async (req, res, next) => {
         req.login(registeredUser, err => {
             if (err) return next(err);
             req.flash('success', 'Welcome to Wonder World! Feel free to add you special Wonder!');
-            res.redirect('/campgrounds');
+            res.redirect('/wonders');
         })
     } catch (e) {
         req.flash('error', e.message);
@@ -27,7 +27,7 @@ module.exports.renderLogin = (req, res) => {
 module.exports.login = (req, res) => {
     const { username } = req.body;
     req.flash('success', `Welcome Back, ${username}!`);
-    const redirectUrl = req.session.returnTo || '/campgrounds';
+    const redirectUrl = req.session.returnTo || '/wonders';
     delete req.session.returnTo;
     res.redirect(redirectUrl);
 }
@@ -36,5 +36,5 @@ module.exports.logout = (req, res) => {
     req.logout();
     // req.session.destroy();
     req.flash('success', "Goodbye!");
-    res.redirect('/campgrounds');
+    res.redirect('/wonders');
 }

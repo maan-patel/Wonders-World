@@ -26,7 +26,7 @@ module.exports.createCampground = async (req, res, next) => {
     await campground.save();
     console.log(campground);
     req.flash('success', 'Successfully made a new Wonder!');
-    res.redirect(`/campgrounds/${campground._id}`)
+    res.redirect(`/wonders/${campground._id}`)
 }
 
 module.exports.showCampground = async (req, res,) => {
@@ -38,7 +38,7 @@ module.exports.showCampground = async (req, res,) => {
     }).populate('author');
     if (!campground) {
         req.flash('error', 'Cannot find that Wonder!');
-        return res.redirect('/campgrounds');
+        return res.redirect('/wonders');
     }
     res.render('campgrounds/show', { campground });
 }
@@ -48,7 +48,7 @@ module.exports.renderEditForm = async (req, res) => {
     const campground = await Campground.findById(id)
     if (!campground) {
         req.flash('error', 'Cannot find that Wonder!');
-        return res.redirect('/campgrounds');
+        return res.redirect('/wonders');
     }
     res.render('campgrounds/edit', { campground });
 }
@@ -67,12 +67,47 @@ module.exports.updateCampground = async (req, res) => {
         await campground.updateOne({ $pull: { images: { filename: { $in: req.body.deleteImages } } } })
     }
     req.flash('success', 'Successfully updated Wonder!');
-    res.redirect(`/campgrounds/${campground._id}`)
+    res.redirect(`/wonders/${campground._id}`)
 }
 
 module.exports.deleteCampground = async (req, res) => {
     const { id } = req.params;
     await Campground.findByIdAndDelete(id);
     req.flash('success', 'Successfully deleted Wonder')
-    res.redirect('/campgrounds');
+    res.redirect('/wonders');
 }
+
+function escapeRegex(text) {
+    return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+}
+
+module.exports.searchWonder = async (req, res) => {
+    if (req.query.search) {
+        const regex = new RegExp(escapeRegex(req.query.search), 'gi')
+        Campground.find({ title: regex, location: regex }, function (err, campgrounds) {
+            if (err) {
+                console.log(err)
+            }
+            else {
+
+                if (allCampgrounds.length < 1) {
+
+                    res.flash('error', 'No Wonder was similar to that. Please try again')
+
+                }
+                res.render('campgrounds/index', { campgrounds })
+            }
+        })
+    }
+    else {
+        Campgrounds.find({}, function (err,) {
+            if (err) {
+                console.log(err)
+            }
+            else {
+                res.render('campgrounds/index', { campgrounds })
+            }
+        })
+    }
+}
+

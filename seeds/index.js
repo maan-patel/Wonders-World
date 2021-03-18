@@ -24,7 +24,7 @@ db.once("open", () => {
 //         const price = wonders[i].year
 //         const camp = new Campground({
 //             //YOUR USER ID
-//             author: '603857fce5b64309fc07fa1e',
+//             author: '60528755a436ff00157207dc',
 //             location: `${wonders[i].location}`,
 //             title: `${wonders[i].name}`,
 //             description: `${wonders[i].about}`,

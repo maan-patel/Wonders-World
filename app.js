@@ -127,6 +127,9 @@ app.use(
                 "https://wallpapercave.com/",
                 "https://cdn.britannica.com/",
                 "https://unsplash.com/collections/",
+                "https://www.thoughtco.com/",
+                "https://images.theconversation.com/",
+                "https://lp-cms-production.imgix.net/",
                 "https://www.wallpapertip.com/wmimgs/"
             ],
             fontSrc: ["'self'", ...fontSrcUrls],

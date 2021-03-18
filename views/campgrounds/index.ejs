@@ -29,7 +29,11 @@
         <div class="card-body">
           <h5 class="card-title"><%= campground.title %></h5>
 
-          <p class="card-text"><%= campground.description %></p>
+          <p class="card-text"><%= campground.description.slice(0,160) %>...</p>
+          <p class="card-text">
+            <%= campground.price ? `Established In: ${campground.price }` : ""
+            %>
+          </p>
           <p class="card-text">
             <small class="text-muted"><%= campground.location%></small>
           </p>

@@ -91,6 +91,7 @@ const scriptSrcUrls = [
     "https://kit.fontawesome.com/",
     "https://cdnjs.cloudflare.com/",
     "https://cdn.jsdelivr.net",
+    "https://wonders-world.herokuapp.com/",
 ];
 const styleSrcUrls = [
     "https://kit-free.fontawesome.com/",
@@ -99,12 +100,14 @@ const styleSrcUrls = [
     "https://api.tiles.mapbox.com/",
     "https://fonts.googleapis.com/",
     "https://use.fontawesome.com/",
+    "https://wonders-world.herokuapp.com/",
 ];
 const connectSrcUrls = [
     "https://api.mapbox.com/",
     "https://a.tiles.mapbox.com/",
     "https://b.tiles.mapbox.com/",
     "https://events.mapbox.com/",
+    "https://wonders-world.herokuapp.com/",
 ];
 const fontSrcUrls = [];
 app.use(
@@ -130,7 +133,8 @@ app.use(
                 "https://www.thoughtco.com/",
                 "https://images.theconversation.com/",
                 "https://lp-cms-production.imgix.net/",
-                "https://www.wallpapertip.com/wmimgs/"
+                "https://www.wallpapertip.com/wmimgs/",
+                "https://wonders-world.herokuapp.com/"
             ],
             fontSrc: ["'self'", ...fontSrcUrls],
         },
